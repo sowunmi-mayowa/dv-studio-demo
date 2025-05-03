@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -45,15 +46,14 @@ export default function Navbar() {
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link href="/" className="relative z-10">
           <div className="flex items-center">
-            <div className="relative h-12 w-12 mr-2">
-              <svg viewBox="0 0 100 100" className="h-full w-full fill-current text-rose-700">
+            <div className="relative h-12 mr-2">
+              {/* <svg viewBox="0 0 100 100" className="h-full w-full fill-current text-rose-700">
                 <path d="M20 20h60v60h-15v-45h-30v45h-15z" />
                 <path d="M50 50h15v15h-15z" />
-              </svg>
+              </svg> */}
+              <Image src="/logo.png" alt="Logo" width={500} height={500} className="h-full w-full" />
             </div>
-            <span className={cn("text-2xl font-bold transition-colors", scrolled ? "text-rose-700" : "text-white")}>
-              DV Studio
-            </span>
+            
           </div>
         </Link>
 
